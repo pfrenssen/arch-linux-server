@@ -18,11 +18,9 @@ locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 systemctl enable dhcpcd@ens3.service
-systemctl start dhcpcd@ens3.service
 
 touch /etc/iptables/iptables.rules
 systemctl enable iptables
-systemctl start iptables
 
 # Update mirrorlist and rank by fastest mirrors.
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
@@ -43,7 +41,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "%wheel      ALL=(ALL) ALL" >> /etc/sudoers
 systemctl enable sshd
-systemctl start sshd
 
 # Install outgoing mailserver
 arch-linux-server/mailserver/only_outgoing.sh
@@ -55,7 +52,6 @@ cp arch-linux-server/config/etc/systemd/system/certbot.timer /etc/systemd/system
 cp arch-linux-server/config/etc/systemd/system/certbot.service /etc/systemd/system/certbot.service
 systemctl daemon-reload
 systemctl enable certbot.timer
-systemctl start certbot.timer
 
 # Add users
 useradd -m -G wheel ${admin_username}

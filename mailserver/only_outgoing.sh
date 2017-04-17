@@ -22,4 +22,3 @@ postmaster:   root
 newaliases
 
 sudo systemctl enable postfix
-sudo systemctl start postfix
