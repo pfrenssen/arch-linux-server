@@ -24,10 +24,6 @@ touch /etc/iptables/iptables.rules
 systemctl enable iptables
 systemctl start iptables
 
-echo "[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
-
 pacman --noconfirm -Sy vim grub sudo openssh openssl certbot python3
 
 mkinitcpio -p linux
