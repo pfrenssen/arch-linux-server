@@ -27,16 +27,12 @@ echo "[archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
 
-pacman --noconfirm -Sy vim grub sudo openssh openssl yaourt certbot python3
+pacman --noconfirm -Sy vim grub sudo openssh openssl certbot python3
 
 mkinitcpio -p linux
 
 grub-install --target=i386-pc /dev/vda
 grub-mkconfig -o /boot/grub/grub.cfg
-
-mkdir /var/yaourt
-chmod a+w /var/yaourt
-sed -i 's/#TMPDIR="\/tmp"/TMPDIR="/var/yaourt"/g' /etc/yaourtrc
 
 mkdir /etc/skel/tmp
 mkdir /etc/skel/bin
