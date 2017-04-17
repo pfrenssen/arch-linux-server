@@ -1,5 +1,7 @@
 #! /bin/bash -x
 
+admin_username=`cat /root/config/admin_username`
+
 cd /usr/local/src/arch-linux-server
 
 sudo pacman --noconfirm -S postfix
@@ -16,6 +18,7 @@ sudo echo "
 # Person who should get root's mail. Don't receive mail as root!
 spam:   root
 ham:    root
+root:   $admin_username
 " >> /etc/postfix/aliases
 
 newaliases
