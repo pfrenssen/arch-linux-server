@@ -73,7 +73,7 @@ echo -e "$admin_username:$random_passwd_user" | chpasswd
 
 mkdir /var/www
 chmod a+x /var/www
-ln -s /var/www /home/$admin_username/www
+
 mkdir /var/mails
 chmod 777 /var/mails
 echo "root@$new_hostname
