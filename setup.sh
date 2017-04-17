@@ -19,7 +19,7 @@ parted /dev/vda -s mklabel msdos
 parted /dev/vda -s mkpart primary ext4 1MiB 90%
 parted /dev/vda -s set 1 boot on
 parted /dev/vda -s mkpart primary ext4 90% 95%
-parted /dev/vda -s mkpart linux-swap ext4 95% 100%
+parted /dev/vda -s mkpart primary linux-swap 95% 100%
 
 mkfs.ext4 /dev/vda1
 mkfs.ext4 /dev/vda2
