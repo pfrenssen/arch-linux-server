@@ -24,6 +24,16 @@ touch /etc/iptables/iptables.rules
 systemctl enable iptables
 systemctl start iptables
 
+# Update mirrorlist and rank by fastest mirrors.
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+for country in BE DE DK GB NL; do
+  curl -s "https://www.archlinux.org/mirrorlist/?country=$country&use_mirror_status=on" >> /etc/pacman.d/mirrorlist
+done;
+sed -i 's/^#Server/Server/g' /etc/pacman.d/mirrorlist
+sed -i '/^#/d' /etc/pacman.d/mirrorlist
+rankmirrors /etc/pacman.d/mirrorlist > /etc/pacman.d/mirrorlist
+
+# Install basic packages needed to complete installation.
 pacman --noconfirm -Sy vim grub sudo openssh openssl certbot python3
 
 mkinitcpio -p linux
