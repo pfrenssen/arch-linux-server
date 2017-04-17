@@ -34,10 +34,6 @@ mkinitcpio -p linux
 grub-install --target=i386-pc /dev/vda
 grub-mkconfig -o /boot/grub/grub.cfg
 
-mkdir /etc/skel/tmp
-mkdir /etc/skel/bin
-echo "export PATH=\$PATH:~/bin" >> /etc/skel/.bashrc
-
 echo "%wheel      ALL=(ALL) ALL" >> /etc/sudoers
 systemctl enable sshd
 systemctl start sshd
