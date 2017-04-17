@@ -37,4 +37,5 @@ chmod u+x /mnt/root/setup-chrooted.sh
 cp -R config /mnt/root/config
 arch-chroot /mnt /root/setup-chrooted.sh
 
+read -p "Press enter to reboot"
 reboot

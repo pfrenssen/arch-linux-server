@@ -86,7 +86,8 @@ echo ${admin_username} >> /root/.forward
 echo ${admin_user_email} >> /home/$admin_username/.forward
 chown $admin_username.$admin_username /home/$admin_username/.forward
 
-
 cp arch-linux-server/config/etc/systemd/system/post-installation.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable post-installation.service
+
+cat /var/mails/newserver.email
