@@ -9,6 +9,7 @@ new_hostname=`cat /root/config/hostname`
 admin_username=`cat /root/config/admin_username`
 admin_user_email=`cat /root/config/admin_user_email`
 
+rm /etc/localtime
 ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 hwclock --systohc --utc
 
