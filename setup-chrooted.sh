@@ -49,7 +49,7 @@ systemctl start sshd
 arch-linux-server/mailserver/only_outgoing.sh
 
 # Create a default certificate
-certbot certonly --standalone -d $new_hostname --email $admin_user_email --agree-tos
+certbot certonly --non-interactive --standalone -d $new_hostname --email $admin_user_email --agree-tos
 ln -s /etc/letsencrypt/live/$new_hostname /etc/letsencrypt/root
 cp arch-linux-server/config/etc/systemd/system/certbot.timer /etc/systemd/system/certbot.timer
 cp arch-linux-server/config/etc/systemd/system/certbot.service /etc/systemd/system/certbot.service
