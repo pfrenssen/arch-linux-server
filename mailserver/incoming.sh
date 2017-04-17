@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd /usr/local/bin/arch-linux-server
+cd /usr/local/src/arch-linux-server
 sudo sed -i 's/inet_interfaces = loopback-only//g' /etc/postfix/main.cf
 
 sudo pacman -S dovecot

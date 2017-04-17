@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd /usr/local/bin/arch-linux-server
+cd /usr/local/src/arch-linux-server
 
 sudo pacman --noconfirm -S postfix
 

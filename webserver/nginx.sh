@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd /usr/local/bin/arch-linux-server
+cd /usr/local/src/arch-linux-server
 
 hostname="$(hostname)"
 
@@ -28,7 +28,7 @@ sudo openssl dhparam -out /etc/nginx/ssl/dhparam4.pem 4096
 sudo cp config/etc/nginx/sites-default/default-https.conf /etc/nginx/sites-default/default-https.conf
 sudo sed -i 's/#return 301 https:\/\/$host$request_uri;/return 301 https:\/\/$host$request_uri;/g' /etc/nginx/sites-default/default-http.conf
 
-sudo cp /usr/local/bin/arch-linux-server/webserver/favicon/favicon.ico /usr/share/nginx/html/
+sudo cp /usr/local/src/arch-linux-server/webserver/favicon/favicon.ico /usr/share/nginx/html/
 sudo chown -R http.http /usr/share/nginx/html
 sudo chmod 0755 /usr/share/nginx/html
 

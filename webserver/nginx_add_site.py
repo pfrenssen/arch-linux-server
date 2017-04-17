@@ -47,7 +47,7 @@ if php56:
     phpSocketName = '/run/php56-fpm/'+url+'.sock'
 
 # Create a PHP-FPM Config file
-phpFpmTemplateFile = open('/usr/local/bin/arch-linux-server/config/etc/php-fpm.d/template.conf')
+phpFpmTemplateFile = open('/usr/local/src/arch-linux-server/config/etc/php-fpm.d/template.conf')
 phpFpmFile = open(phpFpmFilename, "w")
 phpFpmConfig = phpFpmTemplateFile.read()
 phpFpmConfig = phpFpmConfig.replace('[root]', root)
@@ -59,7 +59,7 @@ phpFpmFile.close()
 phpFpmTemplateFile.close()
 
 # Create the NGINX site Config
-nginxTemplateFile = open('/usr/local/bin/arch-linux-server/config/etc/nginx/sites-available/template.conf')
+nginxTemplateFile = open('/usr/local/src/arch-linux-server/config/etc/nginx/sites-available/template.conf')
 nginxConfigFile = open('/etc/nginx/sites-available/'+url+'.conf', "w")
 nginxConfig = nginxTemplateFile.read();
 nginxConfig = nginxConfig.replace('[root]', root)
