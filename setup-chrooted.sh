@@ -50,7 +50,6 @@ certbot certonly --non-interactive --standalone -d $new_hostname --email $admin_
 ln -s /etc/letsencrypt/live/$new_hostname /etc/letsencrypt/root
 cp arch-linux-server/config/etc/systemd/system/certbot.timer /etc/systemd/system/certbot.timer
 cp arch-linux-server/config/etc/systemd/system/certbot.service /etc/systemd/system/certbot.service
-systemctl daemon-reload
 systemctl enable certbot.timer
 
 # Add users
