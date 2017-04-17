@@ -16,7 +16,6 @@ sudo echo "
 # Person who should get root's mail. Don't receive mail as root!
 spam:   root
 ham:    root
-postmaster:   root
 " >> /etc/postfix/aliases
 
 newaliases
