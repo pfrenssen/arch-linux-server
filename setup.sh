@@ -32,7 +32,7 @@ pacstrap /mnt base base-devel git
 
 genfstab -p /mnt >> /mnt/etc/fstab
 
-wget https://github.com/jaapjansma/arch-linux-server/raw/master/setup-chrooted.sh -O /mnt/root/setup-chrooted.sh
+wget https://github.com/pfrenssen/arch-linux-server/raw/master/setup-chrooted.sh -O /mnt/root/setup-chrooted.sh
 chmod u+x /mnt/root/setup-chrooted.sh
 cp -R config /mnt/root/config
 arch-chroot /mnt /root/setup-chrooted.sh

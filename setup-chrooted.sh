@@ -3,7 +3,7 @@
 
 cd /usr/local/bin
 rm -rf arch-linux-server
-git clone https://github.com/jaapjansma/arch-linux-server.git
+git clone https://github.com/pfrenssen/arch-linux-server.git
 
 new_hostname=`cat /root/config/hostname`
 admin_username=`cat /root/config/admin_username`
