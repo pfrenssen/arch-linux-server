@@ -59,8 +59,8 @@ then
 fi
 chown -R $admin_username.$admin_username /home/${admin_username}/.ssh
 
-random_passwd_root=$(cat /dev/urandom | tr -dc "a-zA-Z0-9!@#$%^&*()_+?><~\;" | fold -w 32 | head -n 1)
-random_passwd_user=$(cat /dev/urandom | tr -dc "a-zA-Z0-9!@#$%^&*()_+?><~\;" | fold -w 32 | head -n 1)
+random_passwd_root=$(curl -s "https://makemeapassword.org/api/v1/passphrase/plain?pc=1&wc=4&sp=y&maxCh=64&whenUp=StartOfWord&whenNum=StartOrEndOfWord")
+random_passwd_user=$(curl -s "https://makemeapassword.org/api/v1/passphrase/plain?pc=1&wc=4&sp=y&maxCh=64&whenUp=StartOfWord&whenNum=StartOrEndOfWord")
 echo -e "root:$random_passwd_root" | chpasswd
 echo -e "$admin_username:$random_passwd_user" | chpasswd
 
