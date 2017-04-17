@@ -14,7 +14,7 @@ $ echo -e "nameserver 80.69.67.66\nnameserver 80.69.66.67" >> /etc/resolv.conf
 ```
 
 ```
-wget https://github.com/jaapjansma/arch-linux-server/raw/master/setup.sh
+wget https://github.com/pfrenssen/arch-linux-server/raw/master/setup.sh
 chmod u+x setup.sh
 ./setup.sh
 ```
