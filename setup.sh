@@ -16,17 +16,18 @@ read admin_user_email
 echo ${admin_user_email} >> config/admin_user_email
 
 parted /dev/vda -s mklabel msdos
-parted /dev/vda -s mkpart primary ext4 1MiB 30GiB
+parted /dev/vda -s mkpart primary ext4 1MiB 90%
 parted /dev/vda -s set 1 boot on
-parted /dev/vda -s mkpart primary ext4 30GiB 100%
+parted /dev/vda -s mkpart primary ext4 90% 95%
+parted /dev/vda -s mkpart linux-swap ext4 95% 100%
 
 mkfs.ext4 /dev/vda1
 mkfs.ext4 /dev/vda2
-mkfs.ext4 /dev/vda3
+mkswap /dev/vda3
 
 mount /dev/vda1 /mnt
-mkdir /mnt/home
-mount /dev/vda2 /mnt/home
+mkdir /mnt/tmp
+mount /dev/vda2 /mnt/tmp
 
 pacstrap /mnt base base-devel git
 
